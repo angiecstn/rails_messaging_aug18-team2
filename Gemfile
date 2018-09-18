@@ -17,13 +17,12 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
 group :development do
-  gem 'pry-byebug'
-  gem 'spring'
-  gem 'web-console', '~> 2.0'
   gem 'factory_bot_rails'
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'spring'
+  gem 'web-console', '~> 2.0'
 end
 
 group :production do
@@ -34,4 +33,3 @@ end
 gem 'loofah', '~> 2.2.1'
 gem 'rails-html-sanitizer', '~> 1.0.4'
 gem 'sprockets', '~> 3.7.2'
-
