@@ -13,10 +13,6 @@ Given("I am on the inbox page") do
   visit mailbox_inbox_path
 end
 
-When("I click on the link {string}") do |button|
-  click_on button
-end
-
 Given("show me the page") do
   save_and_open_page
 end
