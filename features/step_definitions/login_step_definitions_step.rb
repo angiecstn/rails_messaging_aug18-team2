@@ -16,10 +16,6 @@ Given("the following user exists") do |table|
     fill_in field, with: content
   end
   
-  Then("I should be on the inbox page") do
-
-  end
-  
   Then("I should see the message {string}") do |message|
     expect(page).to have_content message
   end
