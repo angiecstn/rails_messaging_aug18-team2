@@ -30,6 +30,7 @@ end
     gem 'pry-rails'
     gem 'rspec-rails'
     gem 'shoulda-matchers'
+    gem 'launchy'
   end
 
 group :production do
