@@ -9,7 +9,7 @@ Given the following user exists
 |email          |password  |name |
 |kalle@kalle.com|mypassword|Kalle|
 
-Scenario:
+Scenario: Happy path user login
 Given I am on the landing page
 When I click on the link "Login"
 And I fill in the "Email" with "kalle@kalle.com"
@@ -18,3 +18,10 @@ When I click on the link "Log in"
 Then I should be on the inbox page
 And I should see the message "Signed in successfully"
 
+Scenario: Sad path user not able to login
+Given I am on the landing page
+When I click on the link "Login"
+And I fill in the "Email" with "jorge@kalle.com"
+And I fill in the "Password" with "x"
+When I click on the link "Log in"
+Then I should see the message "Invalid Email or password."
