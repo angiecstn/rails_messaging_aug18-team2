@@ -17,15 +17,15 @@ Given("show me the page") do
   save_and_open_page
 end
 
-When("I fill in a {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 Then("I am on the compose page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit new_conversation_path
 end
 
-When("I pick a {string}") do |button|
-  click_on button
+When("I pick a {string}") do |option|
+  select option, from: "conversation_recipients"
+end
+
+Then("I pick {string}") do |option|
+  select option, from: "conversation_recipients"
 end
 

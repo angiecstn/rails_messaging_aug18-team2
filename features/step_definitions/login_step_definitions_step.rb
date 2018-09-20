@@ -8,10 +8,6 @@ Given("the following user exists") do |table|
     visit root_path
   end
   
-  When("I fill in the {string} with {string}") do |field, content|
-    fill_in field, with: content
-  end
-  
   Then("I should see the message {string}") do |message|
     expect(page).to have_content message
   end
