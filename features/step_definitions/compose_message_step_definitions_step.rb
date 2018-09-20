@@ -4,6 +4,11 @@ Given("the following user is logged in") do |table|
   end
 end
 
+Given("I am logged in as {string}") do |email|
+  @user = User.find_by(email: email)
+  login_as(@user, scope: :user)
+end
+
 Given("I am on the inbox page") do
   visit mailbox_inbox_path
 end
