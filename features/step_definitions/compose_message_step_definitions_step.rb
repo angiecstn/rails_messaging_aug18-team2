@@ -33,15 +33,16 @@ Then("{string} should have message from {string}") do |receiver_name, sender_nam
   sender = User.find_by(name: sender_name) 
   receiver = User.find_by(name: receiver_name)
   conversation = receiver.mailbox.inbox.first  
-  receipts = conversation.receipts_for receiver  
+  @receipts = conversation.receipts_for receiver  
+  expect(@receipts.first.message.sender).to eq sender
 end
 
-Then("the message should have subject {string}") do |string|
-pending # Write code here that turns the phrase above into concrete actions
+Then("the message should have subject {string}") do |subject|
+  expect(@receipts.first.message.subject).to eq subject 
 end
 
-Then("the message should have body {string}") do |string|
-pending # Write code here that turns the phrase above into concrete actions
+Then("the message should have body {string}") do |body|
+  expect(@receipts.first.message.body).to eq body
 end
 
 
