@@ -29,28 +29,20 @@ Then("I pick {string}") do |option|
   select option, from: "conversation_recipients"
 end
 
-# Then("{string} should have message from {string} with subject {string} and body {string}") do |receiver, user, subject, body|
-#   # 1. Find the sender and receiver
-#   user = User.find_by(email: user_email) 
-#   # 2. find the conversation for reciever
-
-#   # 3. find the receipts
-
-#   # 4. read message and make sure the body and subject match to the variables body and subject
-
-# end
-
-
-Then("{string} should have message from {string}") do |user, user_email|
-  user = User.find_by(email: user_email)
+Then("{string} should have message from {string}") do |receiver_name, sender_name|
+  sender = User.find_by(name: sender_name) 
+  receiver = User.find_by(name: receiver_name)
+  conversation = receiver.mailbox.inbox.first  
+  receipts = conversation.receipts_for receiver  
 end
 
 Then("the message should have subject {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then("the message should have body {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+pending # Write code here that turns the phrase above into concrete actions
 end
+
 
 
